@@ -1,0 +1,15 @@
+li {
+    list-style-type: none;
+}
+
+button#generate:hover {
+    background-color: #6a8faf;
+}
+
+.jumbotron {
+    background-color: #6a8faf;
+}
+
+#generate-counter {
+    padding: 10px;
+}
