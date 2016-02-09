@@ -13,3 +13,11 @@ button#generate:hover {
 #generate-counter {
     padding: 10px;
 }
+
+.change {
+    background-color: yellow;
+}
+
+.change.red {
+    background-color: red;
+}

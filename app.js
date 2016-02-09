@@ -10,29 +10,43 @@
  X That container should have two buttons, one that reads 'delete', the other that reads 'change'.
 
  X Additionally, there should be text that provides a number.
+
  X The number should be the number of times the 'generate' button has been clicked.
 
- The delete button should delete JUST the container that the button is in.
+ X The delete button should delete JUST the container that the button is in.
 
- The change button should change the background-color of the container to red.
+ X The change button should change the background-color of the container to red.
 
- The default or 'normal' state of the background-color should be yellow.
+ X The default or 'normal' state of the background-color should be yellow.
 
- Clicking the button a second time should change it back to yellow, 3rd time red, 4th time yellow, etc.
+ X Clicking the button a second time should change it back to yellow, 3rd time red, 4th time yellow, etc.
 
 
  */
 var counter = 0;
 
 $(document).ready(function() {
-    $('#generate').on('click', appendDom);
-});
+    $('.generate').on('click', appendDom);
+    $('div .delete').on('click', deleteFromDom);
+    $('div .change').on('click', changeColor);
 
+
+
+});
 
 function appendDom() {
     counter++;
-    $('.button-container').append('<button class="btn btn-default" id="delete">Delete</button><button class="btn btn-default" id="change">Change</button>');
-    $('.button-container').append('<div id="generate-counter">The "Generate" button has been clicked ' + counter + ' times.</div>');
+    $('div .delete').append('<button class="btn btn-default">Delete</button>');
+    $('div .change').append('<button class="btn btn-default yellow">Change</button>');
+    $('div .message').append('<div class="generate-counter">The "Generate" button has been clicked ' + counter + ' time(s)</div>');
+    //console.log("button is clicked");
 }
 
 
+function deleteFromDom() {
+    $('div .delete').remove();
+}
+
+function changeColor() {
+    $('div .change').toggleClass('red', '.yellow');
+}
